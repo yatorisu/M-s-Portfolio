@@ -186,79 +186,6 @@ input.text,
   background-color: rgb(138, 248, 130);
 }
 
-/* confirm */
-.news .confirm-top {
-  margin-top: 120px;
-}
-
-.news .confirm-top p {
-  text-align: center;
-  font-size: clamp(0.5rem, 1vw, 1rem);
-}
-
-table {
-  width: 55%;
-}
-
-table tr .contact-result {
-  height: 10%;
-  font-size: clamp(0.75rem, 1vw, 1rem);
-  line-height: 2;
-  background-color: #fff;
-  padding-left: 2%;
-}
-
-table tr .contact-textbox {
-  height: auto;
-}
-
-.result-btn {
-  font-size: clamp(0.7rem, 1vw, 1rem);
-  margin-bottom: 60px;
-  text-align: center;
-}
-
-.result-btn #confirm-btn,
-.result-btn #cancel-btn {
-  background-color: rgb(241, 255, 240);
-  border: 2px solid rgb(14, 245, 14);
-  width: 15%;
-  height: 30px;
-}
-
-.result-btn #cancel-btn {
-  margin-left: 5%;
-}
-
-.result-btn #confirm-btn:hover,
-.result-btn #cancel-btn:hover {
-  background-color: rgb(138, 248, 130);
-}
-
-/* complete */
-.complete-text {
-  text-align: center;
-  margin-top: 100px;
-}
-
-.complete-text p {
-  font-size: clamp(0.75rem, 1.2vw, 1.2rem);
-  margin: 2% auto 5% auto;
-}
-
-#back-btn {
-  width: 200px;
-  height: 30px;
-  background-color: rgb(241, 255, 240);
-  border: 2px solid rgb(14, 245, 14);
-  cursor: pointer;
-  font-size: clamp(0.7rem, 1vw, 1rem);
-}
-
-#back-btn:hover {
-  background-color: rgb(138, 248, 130);
-}
-
 
 /*/////////////////////////////////////////////////////////////////////////////////////*/
 
@@ -287,29 +214,6 @@ table tr .contact-textbox {
 
   .gender td {
     width: 80%;
-  }
-
-  /* confirm */
-  .news .confirm-top {
-    margin-top: 100px;
-  }
-
-  table {
-    width: 85%;
-  }
-
-  .result-btn {
-    margin-bottom: 30px;
-  }
-
-  .result-btn #confirm-btn,
-  .result-btn #cancel-btn {
-    width: 30%;
-  }
-
-
-  font {
-    margin-left: 25%;
   }
 
 

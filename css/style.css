@@ -659,8 +659,13 @@ li {
     right: 30%;
   }
 
+  .main-right li p:nth-of-type(1) {
+    top: 85vh;
+    right: 25%;
+  }
+
   .main-right li p {
-    top: 750px;
+    top: 830px;
   }
 
   @keyframes fade-right {

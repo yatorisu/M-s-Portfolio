@@ -11,7 +11,9 @@
   <link rel="stylesheet" href="css/contact.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Sawarabi+Mincho&family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Sawarabi+Mincho&family=Shippori+Mincho+B1&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -19,7 +21,7 @@
     <h1><a href="index.html">M's PortFlio</a></h1>
     <div class="nav">
       <a href="news.html">News</a>
-      <a href="form.php">Contact</a>
+      <a href="contact.html">Contact</a>
     </div>
   </header>
 
@@ -33,18 +35,15 @@
         <table>
           <tr class="name">
             <th>お名前</th>
-            <td><input class="text" type="text" name="user_name"
-                value="<?php echo isset($_COOKIE['name']) ? $_COOKIE['name'] : ''; ?>"></td>
+            <td><input class="text" type="text" name="user_name"></td>
           </tr>
           <tr class="email">
             <th>メールアドレス</th>
-            <td><input class="text" type="text" name="user_email"
-                value="<?php echo isset($_COOKIE['email']) ? $_COOKIE['email'] : ''; ?>"></td>
+            <td><input class="text" type="text" name="user_email"></td>
           </tr>
           <tr class="phone">
             <th>電話番号</th>
-            <td><input class="text" type="text" name="user_phone"
-                value="<?php echo isset($_COOKIE['phone']) ? $_COOKIE['phone'] : ''; ?>"></td>
+            <td><input class="text" type="text" name="user_phone"></td>
           </tr>
           <tr class="gender">
             <th>性別</th>
@@ -79,7 +78,7 @@
           </tr>
         </table>
         <div class="btn">
-          <input type="submit" value="内容確認">
+          <input type="submit" value="確定">
         </div>
       </form>
 </body>
