@@ -660,12 +660,12 @@ li {
   }
 
   .main-right li p:nth-of-type(1) {
-    top: 77vh;
+    top: 80vh;
     right: 25%;
   }
 
   .main-right li p {
-    top: 82vh;
+    top: 85vh;
   }
 
   @keyframes fade-right {
