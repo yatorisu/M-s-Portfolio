@@ -19,7 +19,6 @@ body {
 
 h1 {
   font-size: clamp(1rem, 2.5vw, 2.5rem);
-  line-height: 1.5;
 }
 
 h2 {
@@ -74,12 +73,14 @@ font {
 
 .header .nav a {
   font-size: clamp(0.8rem, 1.5vw, 1.8rem);
-  padding-left: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .header h1 a:hover,
 .header .nav a:hover {
   opacity: 0.5;
+  border-bottom: 2px solid rgb(14, 245, 14);
 }
 
 /* form */

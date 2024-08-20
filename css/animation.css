@@ -1,0 +1,205 @@
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0E1E3D;
+  color: #C5E0F9;
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #C5E0F9;
+  text-decoration: none;
+}
+
+/* 星空 */
+.stars {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #0E1E3D;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  display: block;
+  background-color: #C5E0F9;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px rgba(#fff, 0.2);
+  opacity: 0;
+  animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+
+/* main */
+.quotation {
+  position: relative;
+}
+
+.quotation h3,
+.quotation p {
+  clip-path: inset(0 100% 0 0);
+  animation: textAnime 2s forwards;
+  animation-delay: 1s;
+  display: inline-block;
+}
+
+@keyframes textAnime {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.quotation h3:first-of-type {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 100px;
+  left: 200px;
+}
+
+.quotation h3 {
+  font-size: 1.5rem;
+  padding-left: 50px;
+  position: absolute;
+  top: 140px;
+  left: 250px;
+}
+
+.quotation p:first-of-type {
+  font-size: 1rem;
+  position: absolute;
+  top: 180px;
+  left: 630px;
+}
+
+.quotation p {
+  font-size: 1rem;
+  position: absolute;
+  top: 230px;
+  left: 280px;
+}
+
+
+.quotation-2 h3,
+.quotation-2 p {
+  clip-path: inset(0 100% 0 0);
+  animation: textAnime2 2s forwards;
+  animation-delay: 3s;
+  display: inline-block;
+}
+
+@keyframes textAnime2 {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.quotation-2 h3:first-of-type {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 400px;
+  right: 250px;
+}
+
+.quotation-2 h3 {
+  font-size: 1.5rem;
+  padding-left: 50px;
+  position: absolute;
+  top: 440px;
+  right: 400px;
+}
+
+.quotation-2 p:first-of-type {
+  font-size: 1rem;
+  position: absolute;
+  top: 480px;
+  right: 250px;
+}
+
+.quotation-2 p {
+  font-size: 1rem;
+  position: absolute;
+  top: 530px;
+  right: 300px;
+}
+
+.animation-back-top {
+  position: relative;
+}
+
+.animation-back-top a {
+  position: absolute;
+  top: 85vh;
+  left: 5%;
+}
+
+.animation-back-top a::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: -30px;
+  width: 180%;
+  height: 1px;
+  background: #C5E0F9;
+  animation: top 1.7s ease infinite;
+}
+
+@keyframes top {
+  0% {
+    transform-origin: right;
+    transform: scaleX(0)
+  }
+
+  45% {
+    transform-origin: right;
+    transform: scaleX(1)
+  }
+
+  55% {
+    transform-origin: left;
+    transform: scaleX(1)
+  }
+
+  100% {
+    transform-origin: left;
+    transform: scaleX(0)
+  }
+}
