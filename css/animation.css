@@ -1,8 +1,5 @@
 html {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  font-size: 100%;
 }
 
 body {
@@ -14,8 +11,6 @@ body {
   font-style: normal;
 
   max-width: 100%;
-  height: 100%;
-  overflow: hidden;
   margin: 0;
   padding: 0;
 }
@@ -29,9 +24,8 @@ a {
 .stars {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 200vh;
   background: #0E1E3D;
-  overflow: hidden;
 }
 
 .star {
@@ -61,9 +55,60 @@ a {
 }
 
 
-/* main */
-.quotation {
+/* header */
+/* 無限ループ */
+.c-text {
   position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+.c-text__item {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: clamp(4rem, 6vw, 6rem);
+}
+
+.c-text__item:nth-child(odd) {
+  animation: MoveLeft var(--tick-duration, 24s) var(--tick-delay, -12s) infinite linear;
+  /*24秒かけて-12秒後に無限ループさせる */
+}
+
+.c-text__item:nth-child(even) {
+  animation: MoveLeft2 var(--tick-duration, 24s) infinite linear;
+  /*24秒かけて無限ループさせる */
+}
+
+@keyframes MoveLeft {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes MoveLeft2 {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+/* main */
+/* 名言 */
+.text {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .quotation h3,
@@ -85,14 +130,14 @@ a {
 }
 
 .quotation h3:first-of-type {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   position: absolute;
   top: 100px;
-  left: 200px;
+  left: 180px;
 }
 
 .quotation h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   padding-left: 50px;
   position: absolute;
   top: 140px;
@@ -100,14 +145,14 @@ a {
 }
 
 .quotation p:first-of-type {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1vw, 1rem);
   position: absolute;
   top: 180px;
   left: 630px;
 }
 
 .quotation p {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1vw, 1rem);
   position: absolute;
   top: 230px;
   left: 280px;
@@ -133,41 +178,147 @@ a {
 }
 
 .quotation-2 h3:first-of-type {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   position: absolute;
-  top: 400px;
+  top: 380px;
   right: 250px;
 }
 
 .quotation-2 h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   padding-left: 50px;
   position: absolute;
-  top: 440px;
+  top: 420px;
   right: 400px;
 }
 
 .quotation-2 p:first-of-type {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1vw, 1rem);
   position: absolute;
-  top: 480px;
+  top: 460px;
   right: 250px;
 }
 
 .quotation-2 p {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1vw, 1rem);
   position: absolute;
-  top: 530px;
+  top: 510px;
   right: 300px;
 }
 
+/* 星アニメーション*/
+.star-kirakira {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background-color: #C5E0F9;
+  animation: anim-star-kirakira 1.5s infinite linear;
+}
+
+.star-kirakira:before {
+  content: '';
+  background-color: #C5E0F9;
+  display: block;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  margin: -25px 0 0 -25px;
+  box-shadow: 0 0 30px 20px #C5E0F9;
+  z-index: 100;
+}
+
+.star-kirakira.is-small {
+  animation: anim-star-kirakira-small 1s infinite linear;
+}
+
+.star-kirakira__path:before,
+.star-kirakira__path:after {
+  background-color: #0E1E3D;
+  position: absolute;
+  content: '';
+  display: block;
+  height: 100px;
+  width: 100px;
+  box-sizing: border-box;
+}
+
+.star-kirakira__path.is-left:before {
+  top: 100px;
+  left: 0px;
+  border-right: 1px solid #C5E0F9;
+  /* border-top: 1px solid #fff; */
+  border-top-right-radius: 50%;
+}
+
+.star-kirakira__path.is-left:after {
+  top: 0px;
+  left: 0px;
+  border-bottom: 1px solid #C5E0F9;
+  /* border-right: 1px solid #fff; */
+  border-bottom-right-radius: 50%;
+}
+
+.star-kirakira__path.is-right:before {
+  top: 100px;
+  left: 100px;
+  border-top: 1px solid #C5E0F9;
+  /* border-left: 1px solid #fff; */
+  border-top-left-radius: 50%;
+}
+
+.star-kirakira__path.is-right:after {
+  top: 0px;
+  left: 100px;
+  border-left: 1px solid #C5E0F9;
+  /* border-bottom: 1px solid #fff; */
+  border-bottom-left-radius: 50%;
+}
+
+.star-1 {
+  position: absolute;
+  top: 250px;
+  left: 130px;
+}
+
+.star-2 {
+  position: absolute;
+  top: 630px;
+  right: 250px;
+}
+
+.star-3 {
+  position: absolute;
+  top: 880px;
+  left: 250px;
+}
+
+
+@keyframes anim-star-kirakira-small {
+  0% {
+    transform: scale(0.3);
+  }
+
+  50% {
+    transform: scale(0.1);
+  }
+
+  100% {
+    transform: scale(0.3);
+  }
+}
+
+/* footer */
+/* 前に戻るボタン */
 .animation-back-top {
   position: relative;
 }
 
 .animation-back-top a {
   position: absolute;
-  top: 85vh;
+  top: 150vh;
   left: 5%;
 }
 
@@ -202,4 +353,79 @@ a {
     transform-origin: left;
     transform: scaleX(0)
   }
+}
+
+
+/* レスポンシブ */
+@media screen and (max-width: 768px) {
+
+  /* 名言 */
+  .quotation h3:first-of-type {
+    top: 100px;
+    left: -20px;
+  }
+
+  .quotation h3 {
+    top: 150px;
+    left: 10px;
+  }
+
+  .quotation p:first-of-type {
+    top: 200px;
+    left: 280px;
+  }
+
+  .quotation p {
+    top: 230px;
+    left: 60px;
+  }
+
+  .quotation p:nth-of-type(2) {
+    padding-right: 60px;
+  }
+
+  .quotation-2 h3:first-of-type {
+    padding-left: 30px;
+    top: 350px;
+    right: 20px;
+  }
+
+  .quotation-2 h3:nth-of-type(2) {
+    top: 410px;
+    right: 90px;
+  }
+
+  .quotation-2 p:first-of-type {
+    top: 460px;
+    right: 30px;
+  }
+
+  .quotation-2 p {
+    top: 490px;
+    right: 60px;
+    padding-left: 60px;
+  }
+
+  /* 星アニメーション */
+  .star-1 {
+    top: 50px;
+    left: 0;
+  }
+
+  .star-2 {
+    top: 630px;
+    right: 0;
+  }
+
+  .star-3 {
+    top: 880px;
+    left: 40px;
+  }
+
+  /* 前に戻るボタン */
+  .animation-back-top a {
+    left: 10%;
+  }
+
+
 }
